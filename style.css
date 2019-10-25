@@ -642,3 +642,82 @@ input[type="text"]{
                 }
              
             }
+
+
+  
+            @media screen and (max-width: 576px){
+
+
+                .flex-container{
+                    display: flex;
+                    flex-direction: column;
+                    width: 90%;
+                  /* justify-content: space-between; */
+                    height: 100vh;
+                    align-items: center;
+                }    
+                .flex-container1{
+                    display: flex;
+                    flex-direction: row;
+                    width: 100%;
+                  justify-content: space-between;
+                    height: 70vh;
+                    align-items: center;
+                    margin: 0 auto;
+                 
+                }   
+                .col-8{
+                    width: 100vh;
+                    margin-top: 30%;
+                }
+                  .col-8 h3{
+                      font-size: 2.5rem;
+                  }
+                  .pic{
+                    background-image: linear-gradient(rgba(59, 1, 1, 0.3),rgba(48, 1, 1, 0.3)), url(bus4.jpg);
+                    /* background-size: cover;  */
+                 background-position: center;
+                    height:34em ;
+                    position: relative;
+                    top: 0;
+                    left:0;
+                    z-index: 1;
+                  
+                  
+                    
+                  
+                
+                }
+                .nav{
+                    width: 100%;
+                }
+
+             .swap{
+             transform: scale(0.5,1);
+             
+             }
+             .col-6{
+                /* float: ; */
+             width: 27.33%; 
+             /* margin: 50px 5%;  */
+             margin-top: 1%;
+             margin-left: 24%;
+             position: absolute;
+    
+          }
+          .col-7{
+            /* float: ; */
+          width: 31.5%; 
+          /* margin: 50px 5%;  */
+          margin-top: 1.9%;
+          margin-left: 75%;
+          position: absolute;
+ 
+       }
+     
+      ::placeholder {
+      
+        font-size: 10.8px;
+      }
+     
+            }
