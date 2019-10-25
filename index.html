@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./styleresponsive.css">
     <link rel="stylesheet" href="./style1.scss">
     <link href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" rel="stylesheet">
+    <link rel="stylesheet" href="./dist/simplepicker.css">
     <title>Document</title>
 </head>
 <body>
@@ -14,7 +15,7 @@
 <header>
 
     <div class="pic">
-        <nav>
+        <nav class="nav">
             <ul>
               <li>
                 <a href="#"><strong>Home</strong></a>
@@ -22,21 +23,23 @@
               <li>
                 <a href="#"><Strong>About</Strong></a>
               </li>
-              <li>
-                <a href="#"><Strong>Services</Strong></a>
-              </li>
+             
               <li>
                 <a href="#"><strong>Contact</strong></a>
               </li>
             </ul>
 
           </nav>
+          <div class="col-8">
+                <h3><i class="fas fa-bus fa-2x"></i></i> MO<span>Seat</span></h3> 
+               
+              </div>
+          <div class="flex-container1">
   <div class="row">
-      <div class="col-8">
-          	<h3><i class="fas fa-bus fa-2x"></i></i> MO<span>Seat</span></h3> 
-             
-            </div>
+     
+           
         <div class="col-3">
+            
             <p>From</p>
                 <input class="effect-1" type="text" placeholder="Leaving From">
                   <span class="focus-border"></span>
@@ -51,16 +54,19 @@
                       </div>
                       <div class="col-5">
                             <p>Date</p>
-                                <input class="effect-1" type="text" placeholder="Leaving From">
-                                  <span class="focus-border"></span>
+                            <input class="effect-1 simplepicker-btn " name="datepick" type="text" placeholder="Date">
+                            <span class="focus-border"></span>
+                          
+                           
+                            <!-- <button class="simplepicker-btn">Show Picker</button> -->
                               </div>
                               <div class="col-7">
                                     
-                                        <a class="example_a" href="file:///E:/bus%20database/busweb/search.html" target="_blank" rel="nofollow noopener">SEARCH</a>
+                                        <a class="example_a" href="file:///E:/bus/MoSeat/client/search.html#" target="_blank" rel="nofollow noopener">SEARCH</a>
                                   
                                       </div>
        
-
+</div>
     </div>
 
 </div>
@@ -133,7 +139,7 @@
  
 		<div>
 		<i class="fa fa-map-marker"></i>
-		<p><span>21 Revolution Street</span> Delhi, India</p>
+		<p><span>21 Revolution Street</span> Bhubaneswar, India</p>
 		</div>
  
 		<div>
@@ -166,7 +172,30 @@
  
 		</div>
  
-		</footer>
- 
+    </footer>
+    <script src="./dist/simplepicker.js"></script>
+   
+        <script>
+            let simplepicker = new SimplePicker({
+              zIndex: 10
+            });
+        
+            // simplepicker.open();
+        
+            const $button = document.querySelector('.simplepicker-btn');
+            // const $eventLog = document.querySelector('.simplepicker-btn');
+            $button.addEventListener('click', (e) => {
+              simplepicker.open();
+            });
+        
+            // $eventLog.innerHTML += '\n\n';
+            simplepicker.on('submit', (date, readableDate) => {
+              document.getElementsByName('datepick')[0].placeholder += readableDate + '\n';
+            });
+        
+            simplepicker.on('close', (date) => {
+              $eventLog.innerHTML += 'Picker Closed'  + '\n';
+            });
+            </script>
 </body>
 </html>
